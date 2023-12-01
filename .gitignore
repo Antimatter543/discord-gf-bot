@@ -1,0 +1,31 @@
+config/config.py
+
+
+# Ignore pycache files
+__pycache__/
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE-specific files and directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore environment-specific files
+.env
+.env.*
+
+# Ignore log files
+*.log
+
+# Ignore dependencies
+/node_modules/
+/bower_components/
