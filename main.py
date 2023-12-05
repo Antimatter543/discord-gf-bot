@@ -29,7 +29,8 @@ class DiscordPartner(discord.Client):
         if message.content.startswith('helloa'):
             # print(message.author)
             await message.channel.send('Hello aaaaa!')
-        elif message.content.startswith('$'):
+        # elif message.content.startswith('$'):
+        else:
             await self.response(message)
 
     async def response(self, discord_message: discord.Message):
