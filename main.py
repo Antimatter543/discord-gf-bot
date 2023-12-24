@@ -5,6 +5,7 @@ from config.config import DISCORD_TOKEN, OPENAI_TOKEN, SYSTEM_PROMPT
 from openai import OpenAI
 
 import io
+from mcstatus import JavaServer
 
 
 
@@ -30,6 +31,16 @@ class DiscordPartner(discord.Client):
             # print(message.author)
             await message.channel.send('Hello aaaaa!')
         # elif message.content.startswith('$'):
+
+        if message.content.startswith("/mcstatus"):
+            
+            server = JavaServer.lookup("minecraft.uqcs.org:25605")
+
+
+            status = server.status()
+            print(status.players)
+            await message.channel.send(f"The server has {status.players.online} player(s) online:  {status.players} and replied in {status.latency} ms")
+
         else:
             await self.response(message)
 
